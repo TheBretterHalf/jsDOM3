@@ -1,29 +1,19 @@
 var bookList = document.querySelector('#book-list');
 
-console.log('book list parent element:', bookList.parentElement.parentElement);
-console.log('book list parent Node:', bookList.parentNode);
+console.log('booklist next sibling is:', bookList.nextSibling)
+console.log('booklist next sibling is:', bookList.nextElementSibling)
 
-console.log(bookList.children);
+console.log('booklist next sibling is:', bookList.previousSibling)
+console.log('booklist next sibling is:', bookList.previousElementSibling)
+
+bookList.previousElementSibling.querySelector('p').innerHTML+='<br>Too Cool For Everyone Else'
 
 
 // const bookList = document.querySelector('#book-list');
 
-// console.log('book list parent element:', bookList.parentElement);
-// console.log('book list parent node:', bookList.parentNode);
+// console.log('#book-list next sibling:', bookList.nextSibling);
+// console.log('#book-list next element sibling:', bookList.nextElementSibling);
+// console.log('#book-list previous sibling:', bookList.previousSibling);
+// console.log('#book-list previous element sibling:', bookList.previousElementSibling);
 
-// console.log('all node children:');
-// Array.from(bookList.childNodes).forEach(function(node){
-//   console.log(node);
-// });
-
-// console.log('all element children:');
-// Array.from(bookList.children).forEach(function(node){
-//   console.log(node);
-// });
-
-// const titles = bookList.querySelectorAll('.name');
-
-// console.log('Book titles:');
-// Array.from(titles).forEach(function(title){
-//   console.log(title.textContent);
-// });
+// bookList.previousElementSibling.querySelector('p').innerHTML += '<br />Too cool for everyone else!';
