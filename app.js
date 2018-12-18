@@ -1,22 +1,29 @@
-var banner = document.querySelector('#page-banner');
+var bookList = document.querySelector('#book-list');
 
-console.log('#page-banner node type is:', banner.nodeType);
+console.log('book list parent element:', bookList.parentElement.parentElement);
+console.log('book list parent Node:', bookList.parentNode);
 
-console.log('#page-banner node Name is:', banner.nodeName);
-
-console.log('#page-banner has child nodes:', banner.hasChildNodes());
-
-var clonedBanner = banner.cloneNode(true);
-
-console.log(clonedBanner);
+console.log(bookList.children);
 
 
+// const bookList = document.querySelector('#book-list');
 
-// const banner = document.querySelector('#page-banner');
+// console.log('book list parent element:', bookList.parentElement);
+// console.log('book list parent node:', bookList.parentNode);
 
-// console.log('#page-banner node type is:', banner.nodeType);
-// console.log('#page-banner node name is:', banner.nodeName);
-// console.log('#page-banner has child nodes:', banner.hasChildNodes());
+// console.log('all node children:');
+// Array.from(bookList.childNodes).forEach(function(node){
+//   console.log(node);
+// });
 
-// const clonedBanner = banner.cloneNode(true);
-// console.log(clonedBanner);
+// console.log('all element children:');
+// Array.from(bookList.children).forEach(function(node){
+//   console.log(node);
+// });
+
+// const titles = bookList.querySelectorAll('.name');
+
+// console.log('Book titles:');
+// Array.from(titles).forEach(function(title){
+//   console.log(title.textContent);
+// });
