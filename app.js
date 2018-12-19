@@ -24,11 +24,22 @@ addForm.addEventListener('submit', function(e){
   bookName.textContent = value;
   deleteBtn.textContent = 'delete';
 
+  // add classes
   bookName.classList.add('name');
   deleteBtn.classList.add('delete');
-  
+
   // append to DOM
   li.appendChild(bookName);
   li.appendChild(deleteBtn);
   list.appendChild(li);
 });
+
+var hidebox = document.querySelector('#hide');
+hidebox.addEventListener('change', function(e){
+  if (hidebox.checked){
+    list.style.display = "none"
+  }
+  else {
+    list.style.display = "block"
+  }
+})
