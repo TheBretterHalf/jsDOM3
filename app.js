@@ -34,12 +34,62 @@ addForm.addEventListener('submit', function(e){
   list.appendChild(li);
 });
 
-var hidebox = document.querySelector('#hide');
-hidebox.addEventListener('change', function(e){
-  if (hidebox.checked){
-    list.style.display = "none"
+// hide books
+const hideBox = document.querySelector('#hide');
+hideBox.addEventListener('change', function(e){
+  if(hideBox.checked){
+    list.style.display = "none";
+  } else {
+    list.style.display = "initial";
   }
-  else {
-    list.style.display = "block"
+});
+
+// filter books
+const searchBar = forms['search-books'].querySelector('input');
+searchBar.addEventListener('keyup', (e) => {
+  const term = e.target.value.toLowerCase();
+  const books = list.getElementsByTagName('li');
+  Array.from(books).forEach((book) => {
+    const title = book.firstElementChild.textContent;
+    if(title.toLowerCase().indexOf(e.target.value) != -1){
+      book.style.display = 'block';
+    } else {
+      book.style.display = 'none';
+    }
+  });
+});
+
+var tabs = document.querySelector('.tabs');
+var panels = document.querySelectorAll('.panel')
+tabs.addEventListener('click', function(e){
+  if (e.target.tagName == "LI"){
+    var targetPanel = document.querySelector(e.target.dataset.target);
+    panels.forEach(function(panel){
+      if (panel == targetPanel){
+        panel.classList.add('active');
+      }else{
+        panel.classList.remove('active');
+      }
+    })
   }
 })
+
+
+
+
+
+// // tabbed content
+// const tabs = document.querySelector('.tabs');
+// const panels = document.querySelectorAll('.panel');
+// tabs.addEventListener('click', (e) => {
+//   if(e.target.tagName == 'LI'){
+//     const targetPanel = document.querySelector(e.target.dataset.target);
+//     Array.from(panels).forEach((panel) => {
+//       if(panel == targetPanel){
+//         panel.classList.add('active');
+//       }else{
+//         panel.classList.remove('active');
+//       }
+//     });
+//   }
+// });
