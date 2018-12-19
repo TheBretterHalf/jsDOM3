@@ -1,41 +1,24 @@
-var h2 = document.querySelector('#book-list h2')
-h2.addEventListener('click', function(e){
-  console.log(e.target);
-  console.log(e);
+var list = document.querySelector('#book-list ul');
+
+list.addEventListener('click', function(e){
+  if (e.target.className=='delete'){
+    var li = e.target.parentElement
+    list.removeChild(li)
+  }
 })
 
-var btns = document.querySelectorAll('#book-list .delete');
-Array.from(btns).forEach(function(btn){
-  btn.addEventListener('click', function(e){
-    var li = e.target.parentElement;
-    li.parentNode.removeChild(li)
-  })
-})
 
-var link= document.querySelector('#page-banner a')
-link.addEventListener('click', function(e){
-  e.preventDefault();
-  console.log('navigation to:', e.target.textContent, 'was prevented.')
-})
 
-// const listItems = document.querySelectorAll('#book-list ul li');
 
-// Array.from(listItems).forEach(function(item){
-//   item.addEventListener('click', (e) => {
 
+
+
+// const list = document.querySelector('#book-list ul');
+
+// // delete books
+// list.addEventListener('click', (e) => {
+//   if(e.target.className == 'delete'){
 //     const li = e.target.parentElement;
-//     console.log('child element to remove:', li);
-//     console.log('parent element to remove child from:', li.parentElement);
 //     li.parentNode.removeChild(li);
-
-//   });
-// });
-
-// // prevent default behaviour
-
-// const link = document.querySelector('#page-banner a');
-
-// link.addEventListener('click', function(e){
-//   e.preventDefault();
-//   console.log('Navigation to', e.target.textContent, 'was prevented');
+//   }
 // });
