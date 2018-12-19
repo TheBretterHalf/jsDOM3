@@ -1,19 +1,41 @@
-var bookList = document.querySelector('#book-list');
+var h2 = document.querySelector('#book-list h2')
+h2.addEventListener('click', function(e){
+  console.log(e.target);
+  console.log(e);
+})
 
-console.log('booklist next sibling is:', bookList.nextSibling)
-console.log('booklist next sibling is:', bookList.nextElementSibling)
+var btns = document.querySelectorAll('#book-list .delete');
+Array.from(btns).forEach(function(btn){
+  btn.addEventListener('click', function(e){
+    var li = e.target.parentElement;
+    li.parentNode.removeChild(li)
+  })
+})
 
-console.log('booklist next sibling is:', bookList.previousSibling)
-console.log('booklist next sibling is:', bookList.previousElementSibling)
+var link= document.querySelector('#page-banner a')
+link.addEventListener('click', function(e){
+  e.preventDefault();
+  console.log('navigation to:', e.target.textContent, 'was prevented.')
+})
 
-bookList.previousElementSibling.querySelector('p').innerHTML+='<br>Too Cool For Everyone Else'
+// const listItems = document.querySelectorAll('#book-list ul li');
 
+// Array.from(listItems).forEach(function(item){
+//   item.addEventListener('click', (e) => {
 
-// const bookList = document.querySelector('#book-list');
+//     const li = e.target.parentElement;
+//     console.log('child element to remove:', li);
+//     console.log('parent element to remove child from:', li.parentElement);
+//     li.parentNode.removeChild(li);
 
-// console.log('#book-list next sibling:', bookList.nextSibling);
-// console.log('#book-list next element sibling:', bookList.nextElementSibling);
-// console.log('#book-list previous sibling:', bookList.previousSibling);
-// console.log('#book-list previous element sibling:', bookList.previousElementSibling);
+//   });
+// });
 
-// bookList.previousElementSibling.querySelector('p').innerHTML += '<br />Too cool for everyone else!';
+// // prevent default behaviour
+
+// const link = document.querySelector('#page-banner a');
+
+// link.addEventListener('click', function(e){
+//   e.preventDefault();
+//   console.log('Navigation to', e.target.textContent, 'was prevented');
+// });
