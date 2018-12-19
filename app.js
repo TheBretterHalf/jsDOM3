@@ -1,10 +1,9 @@
-var list = document.querySelector('#book-list ul');
+var addforms = document.forms['add-book'];
 
-list.addEventListener('click', function(e){
-  if (e.target.className=='delete'){
-    var li = e.target.parentElement
-    list.removeChild(li)
-  }
+addforms.addEventListener('submit', function(e){
+  e.preventDefault();
+  var value = addforms.querySelector('input[type="text"]').value
+  console.log(value)
 })
 
 
@@ -21,4 +20,19 @@ list.addEventListener('click', function(e){
 //     const li = e.target.parentElement;
 //     li.parentNode.removeChild(li);
 //   }
+// });
+
+// const forms = document.forms;
+// console.log(forms);
+// console.log(forms['add-book']);
+
+// Array.from(forms).forEach(function(form){
+//   console.log(form);
+// });
+
+// const addForm = forms['add-book'];
+// addForm.addEventListener('submit', function(e){
+//   e.preventDefault();
+//   const value = addForm.querySelector('input[type="text"]').value;
+//   console.log(value);
 // });
